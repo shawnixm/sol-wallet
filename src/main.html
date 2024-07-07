@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Motion - Solana Wallet</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="main_page">
+      <div id="title_section">
+          <div id="name_text" class="inter-regular">
+            Solana Wallet
+          </div>
+      </div>
+      <div id="dollar_section" class="inter-bold">
+          <div id="dollar_value" style="text-align: center;">
+            $0.00
+          </div>
+          <div id="pnl_section">
+            <div id="dollar_pnl">
+            </div>
+            <div id="percent_pnl">
+            </div>
+          </div>
+      </div>
+      <div id="solana_section" class="inter-bold">
+        <div id="sol_value">
+          <img src="/icons/SolanaIcon.png" style="width:90px;height:50px;"> 
+            <div id="sol_amount" style="width:160px;display:flex;justify-content: center;align-items: center;">
+            0.00 SOL
+            </div>
+        </div>
+      </div>
+      <div id="button_section">
+          <button id="go_recieve_page" class="button_style inter-regular">
+            Receive
+          </button>
+          <button id="go_send_page" class="button_style inter-regular">
+            Send
+          </button>
+          <button id="go_settings_page" class="button_style inter-regular">
+            Settings
+          </button>
+      </div>
+    </div>
+    <div id="recieve_page" style="display:none">
+      <div id="title_section">
+        <div id="name_text" class="inter-regular">
+          Solana Wallet
+        </div>
+      </div>
+      <div id="recieve_main">
+        <div id="wallet_address_text" class="inter-regular">
+          <div style="margin-top: 10px;">Wallet Public Address:</div>
+          <div id="public_key_displayed" style="font-size: 20px; margin-top: 15px; text-align: center; width:330px; word-break: break-all;"></div>
+        </div>
+        <button id="public_key_button" class="button_style inter-regular">
+          Copy to Clipboard
+        </button>
+        <div class="inter-regular" id="copy_public_output" style="font-size: 20px; margin-top: 15px; text-align: center; width:330px;">
+        </div>
+      </div>
+      <button id="close_recieve_page" class="button_style inter-regular"> 
+        Close 
+      </button>
+    </div>
+    <div id="send_page" style="display:none">
+      <div id="title_section">
+        <div id="name_text" class="inter-regular">
+          Solana Wallet
+        </div>
+      </div>
+      <div id="send_main">
+        <form id="send_form" style="display: flex; flex-direction: column; align-items: center;">
+          <label class="inter-regular">Address:</label>
+          <input id="recipientAddress" class="inter-regular" style="font-size: 25px; width: 80%;" type="text" required>
+          <label style="margin-top:10px;" class="inter-regular">Amount (SOL):</label>
+          <input id="send_to_recipient_amount" class="inter-regular" style="font-size: 25px; width: 80%;" type="text" required>
+          <button id="send_sol_button" class="button_style inter-regular" type="submit">Send For Real</button>
+        </form>
+        <div id="no_send_form" class="inter-regular" style="font-size: 30px; margin-top: 10px; text-align: center; width:330px;">
+          Wallet has not been created.
+        </div>
+        <div class="inter-regular" id="sending_output" style="font-size: 20px; margin-top: 10px; text-align: center; width:330px; word-break: break-all;"></div>
+      </div>
+      <button id="close_send_page" class="button_style inter-regular"> 
+        Close 
+      </button>
+    </div>
+    <div id="settings_page" style="display:none">
+      <div id="title_section">
+        <div id="name_text" class="inter-regular">
+          Solana Wallet
+        </div>
+      </div>
+      <div id="settings_main">
+        <div id="wallet_uncreated_page">
+          <div class="inter-regular" style="margin-top: 10px;"> No wallet is available.</div>
+          <button id="create_wallet_button" class="button_style inter-regular"> 
+            Create Wallet 
+          </button>
+          <div class="inter-regular" id="settings_output" style="font-size: 20px; margin-top: 20px; text-align: center; width:330px;"></div>
+        </div>
+        <div id="wallet_created_page">
+          <div class="inter-regular" style="margin-top: 10px;"> Wallet is available. </div>
+          <button id="private_key_button" class="button_style inter-regular"> 
+            Private Key
+          </button>
+          <button id="remove_wallet_button" class="button_style inter-regular"> 
+            Remove Wallet 
+          </button>
+          <div class="inter-regular" id="settings_output" style="font-size: 20px; margin-top: 10px; text-align: center; width:330px;"></div>
+          <div class="inter-regular" id="copy_private_output" style="font-size: 20px; margin-top: 10px; text-align: center; width:330px;"></div>
+        </div>
+      </div>
+      <button id="close_settings_page" class="button_style inter-regular"> 
+        Close 
+      </button>
+    </div>
+    <script src="../dist/main.bundle.js"></script> <!-- Refer to bundled script -->
+  </body>
+</html>

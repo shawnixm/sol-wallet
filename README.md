@@ -6,4 +6,4 @@ Chrome extension built using the Solana-Web3.js library to create keypairs, fetc
 
 ## Live Preview
 
-![Alt text](https://imgur.com/a/SYUACCp)
+![Alt text](https://imgur.com/gallery/solana-wallet-SYUACCp)

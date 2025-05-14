@@ -1,3 +1,20 @@
+/**
+ * Navigation Module
+ * 
+ * This module handles the navigation between different pages of the wallet UI.
+ * It sets up event listeners to show/hide pages based on user interaction.
+ */
+
+/**
+ * Initializes navigation functionality between pages
+ * 
+ * Sets up event listeners for buttons that switch between:
+ * - Main wallet page
+ * - Receive page (display address)
+ * - Send page (send SOL)
+ * - Settings page (wallet management)
+ */
+
 export function initializeNavigation() {
     document.addEventListener('DOMContentLoaded', () => {
         // Complete Page Elements

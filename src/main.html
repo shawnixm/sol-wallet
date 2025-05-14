@@ -7,13 +7,23 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
   </head>
+  <!-- 
+  UI Structure:
+  - Main Page: Dashboard showing wallet balance with navigation buttons
+  - Receive Page: Displays wallet address for receiving funds
+  - Send Page: Form to initiate transfers to other wallets
+  - Settings Page: Wallet creation, removal, and private key access
+  All pages except the main page are initially hidden with display:none
+  -->
   <body>
+    <!-- MAIN PAGE -->
     <div id="main_page">
       <div id="title_section">
           <div id="name_text" class="inter-regular">
             Solana Wallet
           </div>
       </div>
+     <!-- Main section displaying wallet balance and PNL -->
       <div id="dollar_section" class="inter-bold">
           <div id="dollar_value" style="text-align: center;">
             $0.00
@@ -33,6 +43,7 @@
             </div>
         </div>
       </div>
+       <!-- Main section displaying navigation buttons -->
       <div id="button_section">
           <button id="go_recieve_page" class="button_style inter-regular">
             Receive
@@ -45,12 +56,14 @@
           </button>
       </div>
     </div>
+    <!-- RECIEVE PAGE -->
     <div id="recieve_page" style="display:none">
       <div id="title_section">
         <div id="name_text" class="inter-regular">
           Solana Wallet
         </div>
       </div>
+      <!-- Recieve section displaying public wallet address key and clipboard button -->
       <div id="recieve_main">
         <div id="wallet_address_text" class="inter-regular">
           <div style="margin-top: 10px;">Wallet Public Address:</div>
@@ -62,17 +75,21 @@
         <div class="inter-regular" id="copy_public_output" style="font-size: 20px; margin-top: 15px; text-align: center; width:330px;">
         </div>
       </div>
+      <!-- Close button: Returns to main dashboard from receive page -->
       <button id="close_recieve_page" class="button_style inter-regular"> 
         Close 
       </button>
     </div>
+    <!-- SEND PAGE -->
     <div id="send_page" style="display:none">
       <div id="title_section">
         <div id="name_text" class="inter-regular">
           Solana Wallet
         </div>
       </div>
+      <!-- Send section displaying form to send SOL to another wallet -->
       <div id="send_main">
+        <!-- This element displays when a wallet has been created for user -->
         <form id="send_form" style="display: flex; flex-direction: column; align-items: center;">
           <label class="inter-regular">Address:</label>
           <input id="recipientAddress" class="inter-regular" style="font-size: 25px; width: 80%;" type="text" required>
@@ -80,22 +97,28 @@
           <input id="send_to_recipient_amount" class="inter-regular" style="font-size: 25px; width: 80%;" type="text" required>
           <button id="send_sol_button" class="button_style inter-regular" type="submit">Send For Real</button>
         </form>
+        <!-- This element displays when no wallet has been created for user -->
         <div id="no_send_form" class="inter-regular" style="font-size: 30px; margin-top: 10px; text-align: center; width:330px;">
           Wallet has not been created.
         </div>
+        <!-- This element displays the status of the send transaction -->
         <div class="inter-regular" id="sending_output" style="font-size: 20px; margin-top: 10px; text-align: center; width:330px; word-break: break-all;"></div>
       </div>
+      <!-- Close button: Returns to main dashboard from send page -->
       <button id="close_send_page" class="button_style inter-regular"> 
         Close 
       </button>
     </div>
+    <!-- SETTINGS PAGE -->
     <div id="settings_page" style="display:none">
       <div id="title_section">
         <div id="name_text" class="inter-regular">
           Solana Wallet
         </div>
       </div>
+      <!-- Settings section displaying wallet creation, removal, and private key clipboard button -->
       <div id="settings_main">
+        <!-- This element displays when a wallet has not been created for user -->
         <div id="wallet_uncreated_page">
           <div class="inter-regular" style="margin-top: 10px;"> No wallet is available.</div>
           <button id="create_wallet_button" class="button_style inter-regular"> 
@@ -103,6 +126,7 @@
           </button>
           <div class="inter-regular" id="settings_output" style="font-size: 20px; margin-top: 20px; text-align: center; width:330px;"></div>
         </div>
+        <!-- This element displays when a wallet has been created for user -->
         <div id="wallet_created_page">
           <div class="inter-regular" style="margin-top: 10px;"> Wallet is available. </div>
           <button id="private_key_button" class="button_style inter-regular"> 
@@ -115,6 +139,7 @@
           <div class="inter-regular" id="copy_private_output" style="font-size: 20px; margin-top: 10px; text-align: center; width:330px;"></div>
         </div>
       </div>
+      <!-- Close button: Returns to main dashboard from settings page -->
       <button id="close_settings_page" class="button_style inter-regular"> 
         Close 
       </button>
